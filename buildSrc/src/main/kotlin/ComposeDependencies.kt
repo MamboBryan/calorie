@@ -6,33 +6,37 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
  * @email mambobryan@gmail.com
  * Tue 21 Feb 2023
  */
-object JetpackCompose {
-    val ui by lazy { "androidx.compose.ui:ui:1.2.1" }
-    val uiTooling by lazy { "androidx.compose.ui:ui-tooling:1.2.1" }
-    val uiPreview by lazy { "androidx.compose.ui:ui-tooling-preview:1.2.1" }
-    val foundation by lazy { "androidx.compose.foundation:foundation:1.2.1" }
-    val material by lazy { "androidx.compose.material:material:1.2.1" }
-    val activity by lazy { "androidx.activity:activity-compose:1.5.1" }
-    val icons by lazy { "androidx.compose.material:material-icons-extended:1.2.1" }
-}
-
 object Accompanist {
 
     private const val VERSION = "0.29.1-alpha"
 
-    val pager by lazy { "com.google.accompanist:accompanist-pager:$VERSION" }
-    val systemUi by lazy { "com.google.accompanist:accompanist-systemuicontroller:$VERSION" }
-    val pagerIndicators by lazy { "com.google.accompanist:accompanist-pager-indicators:$VERSION" }
+    const val pager = "com.google.accompanist:accompanist-pager:$VERSION"
+    const val systemUi = "com.google.accompanist:accompanist-systemuicontroller:$VERSION"
+    const val pagerIndicators = "com.google.accompanist:accompanist-pager-indicators:$VERSION"
 }
 
-fun DependencyHandler.jetpackCompose() {
-    implementation(JetpackCompose.ui)
-    implementation(JetpackCompose.uiTooling)
-    implementation(JetpackCompose.uiPreview)
-    implementation(JetpackCompose.foundation)
-    implementation(JetpackCompose.material)
-    implementation(JetpackCompose.activity)
-    implementation(JetpackCompose.icons)
+fun DependencyHandler.compose() {
+    implementation(platform("androidx.compose:compose-bom:2023.01.00"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.01.00"))
+
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.foundation:foundation")
+    implementation("androidx.compose.ui:ui")
+
+    // Android Studio Preview support
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    debugImplementation("androidx.compose.ui:ui-tooling")
+
+    // UI Tests
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    implementation("androidx.compose.material:material-icons-core")
+    implementation("androidx.compose.material:material-icons-extended")
+    implementation("androidx.compose.material3:material3-window-size-class")
+
+    implementation("androidx.activity:activity-compose:1.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
 }
 
 fun DependencyHandler.accompanist() {

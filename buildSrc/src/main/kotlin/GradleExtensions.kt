@@ -36,6 +36,14 @@ fun DependencyHandler.androidTestImplementation(name: String) {
     add("androidTestImplementation", name)
 }
 
+fun DependencyHandler.androidTestImplementation(notation: Any) {
+    add("androidTestImplementation", notation)
+}
+
+fun DependencyHandler.debugImplementation(notation: Any) {
+    add("debugImplementation", notation)
+}
+
 fun DependencyHandler.project(
     path: String,
     configuration: String? = null

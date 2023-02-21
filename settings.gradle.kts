@@ -13,4 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Calorie"
-include ':app'
+include(":app")
+include(":app-features")
+include(":app-modules")
+include(":app-features:presentation")

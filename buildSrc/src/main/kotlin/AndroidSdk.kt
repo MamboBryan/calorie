@@ -16,6 +16,8 @@ object AndroidSdk {
     const val versionCode = 1
     const val versionName = "1.0.0"
 
+    const val kotlinCompilerExtension = "1.4.1"
+
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
 }

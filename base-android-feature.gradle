@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'org.jetbrains.kotlin.plugin.serialization'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.dagger.hilt.android'
+
+
+android {
+
+    compileSdk AndroidSdk.compileSdk
+
+    defaultConfig {
+
+        minSdk AndroidSdk.minSdk
+        targetSdk AndroidSdk.targetSdk
+
+        versionCode AndroidSdk.versionCode
+        versionName AndroidSdk.versionName
+
+        testInstrumentationRunner AndroidSdk.testInstrumentationRunner
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion AndroidSdk.kotlinCompilerExtension
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
