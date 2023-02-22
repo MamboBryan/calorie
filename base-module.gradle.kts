@@ -11,7 +11,3 @@ dependencies {
     hilt()
 
 }
-
-kapt {
-    correctErrorTypes = true
-}
