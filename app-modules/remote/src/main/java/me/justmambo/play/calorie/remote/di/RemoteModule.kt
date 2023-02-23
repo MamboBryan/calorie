@@ -45,7 +45,6 @@ object RemoteModule {
         install(ContentNegotiation) {
             json(json = Json {
                 encodeDefaults = false
-                explicitNulls = false
             })
         }
 
