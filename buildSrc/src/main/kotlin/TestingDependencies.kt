@@ -1,4 +1,5 @@
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.kotlin.dsl.kotlin
 
 /**
  * @project Calorie
@@ -9,6 +10,7 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 fun DependencyHandler.testing() {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    implementation(kotlin("test"))
 }
 
 fun DependencyHandler.uiTesting(){
