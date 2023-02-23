@@ -11,16 +11,16 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CalorieDto(
-    @SerialName("name") var name: String,
-    @SerialName("calories") var calories: Double,
-    @SerialName("serving_size_g") var servingSizeGrams: Double,
-    @SerialName("fat_total_g") var fatTotalGrams: Double,
-    @SerialName("fat_saturated_g") var fatSaturatedGrams: Double,
-    @SerialName("protein_g") var proteinGrams: Double,
-    @SerialName("sodium_mg") var sodiumMilligrams: Double,
-    @SerialName("potassium_mg") var potassiumMilligrams: Double,
-    @SerialName("cholesterol_mg") var cholesterolMilligrams: Double,
-    @SerialName("carbohydrates_total_g") var carbohydratesTotalGrams: Double,
-    @SerialName("fiber_g") var fiberGrams: Double,
-    @SerialName("sugar_g") var sugarGrams: Double
+    @SerialName("name") val name: String,
+    @SerialName("calories") val calories: Double,
+    @SerialName("serving_size_g") val servingSizeGrams: Double,
+    @SerialName("fat_total_g") val fatTotalGrams: Double,
+    @SerialName("fat_saturated_g") val fatSaturatedGrams: Double,
+    @SerialName("protein_g") val proteinGrams: Double,
+    @SerialName("sodium_mg") val sodiumMilligrams: Double,
+    @SerialName("potassium_mg") val potassiumMilligrams: Double,
+    @SerialName("cholesterol_mg") val cholesterolMilligrams: Double,
+    @SerialName("carbohydrates_total_g") val carbohydratesTotalGrams: Double,
+    @SerialName("fiber_g") val fiberGrams: Double,
+    @SerialName("sugar_g") val sugarGrams: Double
 )
