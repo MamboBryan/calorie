@@ -12,7 +12,6 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import me.justmambo.play.calorie.remote.models.ItemsDto
-import me.justmambo.play.calorie.remote.models.NetworkResult
 import org.junit.Test
 import kotlin.test.DefaultAsserter.assertEquals
 import kotlin.test.assertTrue
