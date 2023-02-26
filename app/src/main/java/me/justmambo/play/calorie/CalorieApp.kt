@@ -2,6 +2,7 @@ package me.justmambo.play.calorie
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
+import timber.log.Timber
 
 /**
  * @project Calorie
@@ -11,4 +12,12 @@ import dagger.hilt.android.HiltAndroidApp
  */
 @HiltAndroidApp
 class CalorieApp : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        plantTimber()
+    }
+
+    private fun plantTimber(){
+        Timber.plant(Timber.DebugTree())
+    }
 }

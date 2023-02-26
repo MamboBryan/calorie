@@ -1,6 +1,7 @@
 package me.justmambo.play.calorie.remote.di
 
 import android.content.Context
+import android.util.Log
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,6 +18,7 @@ import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.Json
 import me.justmambo.play.calorie.remote.CalorieApi
 import me.justmambo.play.calorie.remote.interceptors.NetworkInterceptor
+import timber.log.Timber
 import javax.inject.Singleton
 
 /**
@@ -50,12 +52,17 @@ object RemoteModule {
 
         install(Logging) {
             level = LogLevel.BODY
+            object: Logger {
+                override fun log(message: String) {
+                    Timber.i("LOGGER", "BODY -> \n$message")
+                }
+            }
         }
 
         install(DefaultRequest) {
             header(HttpHeaders.Accept, ContentType.Application.Json)
             header(HttpHeaders.ContentType, ContentType.Application.Json)
-            header(HttpHeaders.AcceptCharset, Charsets.UTF_8.name())
+            header("x-api-key", "8/MqBej61B6ALLuEf7cIWg==tJbmaSTQHGZd6wLJ")
         }
 
     }

@@ -74,8 +74,8 @@ class CalorieEntityTest {
         val updatedCalorie = getEntity(name = "rice", calories = 100.0)
         dao.insert(item = calorie)
         dao.insert(item = updatedCalorie)
-        val calories = dao.getCalories("rice")
-        val first = calories.first().first()
+        val calories = dao.searchCalories("rice")
+        val first = calories.first()
         assertTrue { first.calories == updatedCalorie.calories }
     }
 
@@ -85,7 +85,7 @@ class CalorieEntityTest {
         val calorie = getEntity(name = "rice")
         dao.insert(item = calorie)
         dao.delete(item = calorie)
-        val list = dao.getCalories("rice").first()
+        val list = dao.searchCalories("rice")
         assertTrue { list.any { it.name == "rice" }.not() }
     }
 
@@ -96,7 +96,7 @@ class CalorieEntityTest {
             dao.insert(it)
         }
         dao.deleteAll()
-        val calories = dao.getCalories().first()
+        val calories = dao.searchCalories().first()
         assertTrue { calories.isEmpty() }
     }
 

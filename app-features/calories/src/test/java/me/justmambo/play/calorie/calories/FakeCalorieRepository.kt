@@ -1,8 +1,9 @@
-package me.justmambo.play.calorie.data
+package me.justmambo.play.calorie.calories
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.mapNotNull
+import me.justmambo.play.calorie.data.CalorieRepository
 import me.justmambo.play.calorie.data.models.Calorie
 import me.justmambo.play.calorie.data.models.Resource
 
@@ -48,7 +49,7 @@ class FakeCalorieRepository : CalorieRepository {
     )
 
     override suspend fun searchCalories(query: String): Resource {
-        if (isSuccessful.not()) return Resource.Error(message = "Request is unsuccessful")
+        if (isSuccessful.not()) return Resource.Error(message = "request is unsuccessful")
         if (isEmpty) return Resource.Success(isEmpty)
         val currentList = calories.value
         currentList.apply {

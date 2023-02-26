@@ -15,10 +15,10 @@ import me.justmambo.play.calorie.local.models.CalorieEntity
 interface CalorieDao : BaseDao<CalorieEntity> {
 
     @Query("SELECT * FROM calories")
-    fun getCalories(): Flow<List<CalorieEntity>>
+    fun searchCalories(): Flow<List<CalorieEntity>>
 
     @Query("SELECT * FROM calories WHERE name LIKE '%' || :query || '%'")
-    fun getCalories(vararg query: String): Flow<List<CalorieEntity>>
+    fun searchCalories(vararg query: String): List<CalorieEntity>
 
     @Query("SELECT * FROM calories WHERE name = :name")
     fun getCalorie(name: String): Flow<CalorieEntity>

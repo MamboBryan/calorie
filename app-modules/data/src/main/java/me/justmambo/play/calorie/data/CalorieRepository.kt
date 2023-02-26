@@ -3,6 +3,9 @@ package me.justmambo.play.calorie.data
 import kotlinx.coroutines.flow.Flow
 import me.justmambo.play.calorie.data.models.Calorie
 import me.justmambo.play.calorie.data.models.Resource
+import me.justmambo.play.calorie.local.models.CalorieEntity
+import me.justmambo.play.calorie.remote.models.ItemsDto
+import me.justmambo.play.calorie.remote.models.NetworkResult
 
 /**
  * @project Calorie

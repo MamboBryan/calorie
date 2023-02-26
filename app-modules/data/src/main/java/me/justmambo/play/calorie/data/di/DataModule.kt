@@ -1,11 +1,14 @@
 package me.justmambo.play.calorie.data.di
 
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import me.justmambo.play.calorie.data.CalorieRepository
 import me.justmambo.play.calorie.data.DefaultCalorieRepository
 import me.justmambo.play.calorie.local.daos.CalorieDao
 import me.justmambo.play.calorie.remote.CalorieApi
+import javax.inject.Singleton
 
 /**
  * @project Calorie
@@ -17,7 +20,9 @@ import me.justmambo.play.calorie.remote.CalorieApi
 @InstallIn(SingletonComponent::class)
 object DataModule {
 
-    fun providesDefaultRepository(dao: CalorieDao, api: CalorieApi) =
+    @Provides
+    @Singleton
+    fun providesDefaultRepository(dao: CalorieDao, api: CalorieApi): CalorieRepository =
         DefaultCalorieRepository(dao, api)
 
 }

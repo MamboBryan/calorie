@@ -37,5 +37,6 @@ dependencies {
 
     implementation(project(":app-features:presentation"))
     hilt()
+    implementation("com.jakewharton.timber:timber:5.0.1")
 
 }

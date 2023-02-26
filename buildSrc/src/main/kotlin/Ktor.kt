@@ -13,11 +13,11 @@ object Ktor {
 
     private const val VERSION = "2.2.3"
 
-    val core by lazy { "io.ktor:ktor-client-core:$VERSION" }
-    val serialization by lazy { "io.ktor:ktor-serialization-kotlinx-json:$VERSION" }
-    val logging by lazy { "io.ktor:ktor-client-logging-jvm:$VERSION" }
-    val contentNegotiation by lazy { "io.ktor:ktor-client-content-negotiation:$VERSION" }
-    val okHttp by lazy { "io.ktor:ktor-client-okhttp:$VERSION" }
+    val core = "io.ktor:ktor-client-core:$VERSION"
+    val serialization = "io.ktor:ktor-serialization-kotlinx-json:$VERSION"
+    val logging = "io.ktor:ktor-client-logging:$VERSION"
+    val contentNegotiation = "io.ktor:ktor-client-content-negotiation:$VERSION"
+    val okHttp = "io.ktor:ktor-client-okhttp:$VERSION"
     val mockEngine = "io.ktor:ktor-client-mock:$VERSION"
 
 }
