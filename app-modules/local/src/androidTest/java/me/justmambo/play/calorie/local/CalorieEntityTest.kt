@@ -62,8 +62,8 @@ class CalorieEntityTest {
     fun givenCalorieItemItSavesAndRetriesItSuccessfully() = runBlocking {
         val calorie = getEntity(name = "rice")
         dao.insert(item = calorie)
-        val calories = dao.getCalories(query = "rice")
-        val first = calories.first().first()
+        val calories = dao.getCalorie(name = "rice")
+        val first = calories.first()
         assertTrue { first == calorie }
     }
 
@@ -74,7 +74,7 @@ class CalorieEntityTest {
         val updatedCalorie = getEntity(name = "rice", calories = 100.0)
         dao.insert(item = calorie)
         dao.insert(item = updatedCalorie)
-        val calories = dao.getCalories(query = "rice")
+        val calories = dao.getCalories("rice")
         val first = calories.first().first()
         assertTrue { first.calories == updatedCalorie.calories }
     }
@@ -85,8 +85,19 @@ class CalorieEntityTest {
         val calorie = getEntity(name = "rice")
         dao.insert(item = calorie)
         dao.delete(item = calorie)
-        val list = dao.getCalories(query = "rice").first()
+        val list = dao.getCalories("rice").first()
         assertTrue { list.any { it.name == "rice" }.not() }
+    }
+
+    @Test
+    @Throws(IOException::class)
+    fun afterAddingCalorieItemsYouCanDeleteAllItemsInTheTable() = runBlocking {
+        listOf("one", "two", "three").map { getEntity(it) }.forEach {
+            dao.insert(it)
+        }
+        dao.deleteAll()
+        val calories = dao.getCalories().first()
+        assertTrue { calories.isEmpty() }
     }
 
 }

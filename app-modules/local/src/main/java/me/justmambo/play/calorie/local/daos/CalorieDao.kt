@@ -18,6 +18,12 @@ interface CalorieDao : BaseDao<CalorieEntity> {
     fun getCalories(): Flow<List<CalorieEntity>>
 
     @Query("SELECT * FROM calories WHERE name LIKE '%' || :query || '%'")
-    fun getCalories(query: String): Flow<List<CalorieEntity>>
+    fun getCalories(vararg query: String): Flow<List<CalorieEntity>>
+
+    @Query("SELECT * FROM calories WHERE name = :name")
+    fun getCalorie(name: String): Flow<CalorieEntity>
+
+    @Query("DELETE FROM calories")
+    fun deleteAll()
 
 }
