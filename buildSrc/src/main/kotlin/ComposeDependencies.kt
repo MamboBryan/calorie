@@ -35,12 +35,13 @@ fun DependencyHandler.compose() {
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.compose.material3:material3-window-size-class")
 
+    // navigation
+    implementation("androidx.navigation:navigation-compose:2.5.3")
+
     implementation("androidx.activity:activity-compose:1.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
 }
 
 fun DependencyHandler.accompanist() {
     implementation(Accompanist.systemUi)
-    implementation(Accompanist.pager)
-    implementation(Accompanist.pagerIndicators)
 }

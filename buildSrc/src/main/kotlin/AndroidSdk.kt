@@ -9,7 +9,7 @@ object AndroidSdk {
     const val applicationId = "me.justmambo.play.calorie"
     const val namespace = "me.justmambo.play.calorie"
 
-    const val minSdk = 27
+    const val minSdk = 24
     const val compileSdk = 33
     const val targetSdk = compileSdk
 

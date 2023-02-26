@@ -5,6 +5,5 @@ apply {
 dependencies {
 
     implementation(project(":app-modules:ui"))
-    implementation(project(":app-features:calories"))
 
 }
