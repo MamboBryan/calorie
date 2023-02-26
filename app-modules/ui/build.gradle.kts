@@ -3,5 +3,5 @@ apply {
 }
 
 dependencies {
-
+    accompanist()
 }

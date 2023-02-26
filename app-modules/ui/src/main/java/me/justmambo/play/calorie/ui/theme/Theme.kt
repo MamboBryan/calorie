@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val DarkColorScheme = darkColorScheme(
     primary = PrimaryDark,
@@ -48,6 +49,7 @@ fun CaloriesTheme(
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
+    val systemUiController = rememberSystemUiController()
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
@@ -60,6 +62,13 @@ fun CaloriesTheme(
     if (!view.isInEditMode) {
         SideEffect {
             (view.context as Activity).window.statusBarColor = colorScheme.primary.toArgb()
+        }
+    }
+
+    SideEffect {
+        when (darkTheme) {
+            true -> systemUiController.setStatusBarColor(color = SurfaceDark)
+            false -> systemUiController.setStatusBarColor(color = SurfaceLight)
         }
     }
 
