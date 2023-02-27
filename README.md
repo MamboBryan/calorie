@@ -23,3 +23,13 @@ Calorie has been completely modularized and each module has it's own specific ta
 |:-----------------------------------------------------------------:|
 | <img src="images/modularization.png" hspace="2" alt="calories" /> |
 
+## Testing :test_tube:
+
+I wil give a more detailed testing guide later
+
+| Module                | Test                                                                   |
+|:----------------------|:-----------------------------------------------------------------------|
+| `:remote`             | <img src="images/test/remote.png" hspace="2" alt="remote tests" />     |
+| `:local`              | <img src="images/test/local.png" hspace="2" alt="local tests" />       |
+| `:calories-viewmodel` | <img src="images/test/calories.png" hspace="2" alt="calories tests" /> |
+| `:calorie-viewmodel`  | <img src="images/test/calorie.png" hspace="2" alt="calorie tests" />   |
