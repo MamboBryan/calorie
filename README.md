@@ -1,2 +1,25 @@
-# Calorie
-A simple app to get food details from an API
+# Calorie :fire:
+
+A sample app that showcases details of a food item built with clean architecture :sweat_smile:
+
+## ScreenShots :artist:
+
+|                                Calories                                 |                                Calorie                                |
+|:-----------------------------------------------------------------------:|:---------------------------------------------------------------------:|
+| <img src="images/calories.png" width="200" hspace="2" alt="calories" /> | <img src="images/calorie.png" width="200" hspace="2" alt="calorie" /> |
+
+## Features :man_dancing:
+
+As a user I can :
+
+- Search for calorie details of different food items
+- Have a cache of calorie items offline for later
+
+## Modularization :musical_keyboard:
+
+Calorie has been completely modularized and each module has it's own specific task.
+
+|                          Modularization                           |
+|:-----------------------------------------------------------------:|
+| <img src="images/modularization.png" hspace="2" alt="calories" /> |
+

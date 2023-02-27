@@ -51,7 +51,7 @@ class CalorieTest {
     }
 
     @Test
-    fun calorieViewModel_OnNullId_UiStateIsNull() = runTest {
+    fun calorieViewModel_OnNullId_ThrowsIllegalStateException() = runTest {
 
         val savedStateHandle = SavedStateHandle()
         savedStateHandle["id"] = null
