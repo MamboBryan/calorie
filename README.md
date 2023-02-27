@@ -23,9 +23,11 @@ Calorie has been completely modularized and each module has it's own specific ta
 |:-----------------------------------------------------------------:|
 | <img src="images/modularization.png" hspace="2" alt="calories" /> |
 
+TODO : write a more detailed modularization description outlining what each module does
+
 ## Testing :test_tube:
 
-I wil give a more detailed testing guide later
+TODO : write a more detailed testing description
 
 | Module                | Test                                                                    |
 |:----------------------|:------------------------------------------------------------------------|
